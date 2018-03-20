@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const rasmus = require('./rasmus.jpg');
 import Header from './Header';
+import Card from './Card';
 
 const View = styled.div`
   display: flex;
@@ -29,6 +30,9 @@ class Home extends React.Component {
         <View key={1}>
           <Image src={rasmus} />
           <TextHeader>Rasmus Bergström</TextHeader>
+          <Card title="Title 1">Description 1</Card>
+          <Card title="Title 2">Description 2</Card>
+          <Card title="Title 3">Description 3</Card>
         </View>
       ),
     ];
