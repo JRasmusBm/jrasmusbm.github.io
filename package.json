@@ -11,11 +11,14 @@
     "styled-components": "^3.2.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
+  "homepage": "https://jrasmusbm.github.io/",
   "devDependencies": {
     "@types/jest": "^22.2.0",
     "@types/node": "^9.4.7",
@@ -23,6 +26,7 @@
     "@types/react-dom": "^16.0.4",
     "@types/react-router-dom": "^4.2.5",
     "babel-core": "^6.26.0",
+    "gh-pages": "^1.1.0",
     "typescript": "^2.7.2"
   }
 }
