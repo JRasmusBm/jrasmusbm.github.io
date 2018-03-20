@@ -1,9 +1,13 @@
 import * as React from 'react';
+import Header from './Header';
 
 class Details extends React.Component {
   render() {
     return (
-      <div>Details Page</div>
+      <div>
+        <Header />
+        Details Page
+      </div>
     );
   }
 }
