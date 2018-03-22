@@ -6,11 +6,26 @@ import Header from './Header';
 import Card from './Card';
 
 const View = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #f6f6f6;
+`;
+
+const Content = styled.div`
   display: flex;
   width: 100%;
   align-items: center;
   flex-direction: column;
+  background: #f6f6f6;
 `;
+
+const content = [ 
+  { 
+    key: 1, 
+    title: 'Software developer', 
+    description: 'Experience with JavaScript and TypeScript as it relates to the React Ecosystem' 
+  },
+];
 
 const TextHeader = styled.div`
   padding: 10px;
@@ -24,18 +39,16 @@ const Image = styled.img`
 
 class Home extends React.Component {
   render() {
-    return [ 
-      <Header key={0}/>,
-      (
-        <View key={1}>
+    return ( 
+      <View>
+        <Header key={0}/>
+        <Content key={1}>
           <Image src={rasmus} />
           <TextHeader>Rasmus Bergström</TextHeader>
-          <Card title="Title 1">Description 1</Card>
-          <Card title="Title 2">Description 2</Card>
-          <Card title="Title 3">Description 3</Card>
-        </View>
-      ),
-    ];
+          <Card content={content} />
+        </Content>
+      </View>
+    );
   }
 }
 
