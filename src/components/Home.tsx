@@ -1,9 +1,9 @@
 import * as React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const rasmus = require('./rasmus.jpg');
 import Header from './Header';
-import Card from './Card';
 
 const View = styled.div`
   width: 100%;
@@ -19,16 +19,9 @@ const Content = styled.div`
   background: #f6f6f6;
 `;
 
-const content = [ 
-  { 
-    key: 1, 
-    title: 'Software developer', 
-    description: 'Experience with JavaScript and TypeScript as it relates to the React Ecosystem' 
-  },
-];
-
 const TextHeader = styled.div`
-  padding: 10px;
+  padding: 40px;
+  font-size: 1.2em;
   font-weight: 500;
 `;
 
@@ -37,15 +30,34 @@ const Image = styled.img`
   border-radius: 50%;
 `;
 
+const Button = styled.div`
+  width: minmax(200px, 50%);
+  background: darkgreen;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  &:hover {
+    background: green;
+    cursor: pointer;
+  }
+`;
+
+const Link = styled(NavLink)`
+  text-decoration: none;
+  color: inherit;
+`;
+
 class Home extends React.Component {
   render() {
-    return ( 
+    return (
       <View>
         <Header key={0}/>
         <Content key={1}>
           <Image src={rasmus} />
-          <TextHeader>Rasmus Bergström</TextHeader>
-          <Card content={content} />
+          <TextHeader>Hi, I'm Rasmus!</TextHeader>
+          <Link to="/details">
+            <Button>About me</Button>
+          </Link>
         </Content>
       </View>
     );
