@@ -2,67 +2,61 @@ const cards = [
   { 
     key: 1, 
     title: 'Front End Developer', 
-    description: 'Experience with JavaScript and TypeScript as it relates to the React Ecosystem' 
+    description: 
+    `Experience with JavaScript and TypeScript as it relates to the React
+    Ecosystem` 
   },
   { 
     key: 2, 
-    title: 'Back End Developer', 
-    description: 'Experience with C#, as well as with Django' 
+    title: 'Musical', 
+    description: 
+    `Piano player. Always inspired by good music.`
   },
   { 
     key: 3, 
     title: 'Language Nerd', 
-    description: 'Fluent in Swedish, English, German and Dutch. Always interested in new things to learn. ' 
+    description: 
+    `Fluent in Swedish, English, German and Dutch. Always interested in new
+    things to learn. ` 
   },
   { 
     key: 4, 
-    title: 'Front End Developer', 
-    description: 'Experience with JavaScript and TypeScript as it relates to the React Ecosystem' 
+    title: 'Athletic', 
+    description: 
+    `Grew up playing ice-hockey and soccer. Regularly attends the local gym.
+    Always up for a physical challenge.` 
   },
   { 
     key: 5, 
     title: 'Back End Developer', 
-    description: 'Experience with C#, as well as with Django' 
+    description: 
+    `Experience with C#, as well as with Django` 
   },
   { 
     key: 6, 
-    title: 'Language Nerd', 
-    description: 'Fluent in Swedish, English, German and Dutch. Always interested in new things to learn. ' 
+    title: 'Optimistic', 
+    description: 
+    `Most easily recognized by his smile. Brings a positive spirit.`
   },
   { 
     key: 7, 
-    title: 'Front End Developer', 
-    description: 'Experience with JavaScript and TypeScript as it relates to the React Ecosystem' 
+    title: 'Perfectionist', 
+    description: 
+    `Delivers good quality work. Occasionally spends too much time perfecting
+    a working product.` 
   },
   { 
     key: 8, 
-    title: 'Back End Developer', 
-    description: 'Experience with C#, as well as with Django' 
+    title: 'Team Player', 
+    description: 
+    `Values team success over individual acclaim. The goal is to be reached
+    together. Fights for a good team spirit.`
   },
   { 
     key: 9, 
-    title: 'Language Nerd', 
-    description: 'Fluent in Swedish, English, German and Dutch. Always interested in new things to learn. ' 
-  },
-  { 
-    key: 10, 
-    title: 'Language Nerd', 
-    description: 'Fluent in Swedish, English, German and Dutch. Always interested in new things to learn. ' 
-  },
-  { 
-    key: 11, 
-    title: 'Front End Developer', 
-    description: 'Experience with JavaScript and TypeScript as it relates to the React Ecosystem' 
-  },
-  { 
-    key: 12, 
-    title: 'Back End Developer', 
-    description: 'Experience with C#, as well as with Django' 
-  },
-  { 
-    key: 13, 
-    title: 'Language Nerd', 
-    description: 'Fluent in Swedish, English, German and Dutch. Always interested in new things to learn. ' 
+    title: 'Constant Learner', 
+    description: 
+    `Proactively works to learn new things every day, be it in tech, language, music, sports or social and family life.`
   },
 ];
 
