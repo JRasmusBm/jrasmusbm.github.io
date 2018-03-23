@@ -3,8 +3,8 @@ const cards = [
     key: 1, 
     title: 'Front End Developer', 
     description: 
-    `Experience with JavaScript and TypeScript as it relates to the React
-    Ecosystem` 
+    `Compentent with HTML, CSS, Javascript and TypeScript. Experience
+    predominantly in the React ecosystem.  Ecosystem` 
   },
   { 
     key: 2, 

@@ -52,7 +52,6 @@ interface Props {
 }
 
 interface State {
-  hovered: boolean;
   pinned: boolean;
   color: string;
 }
@@ -67,6 +66,9 @@ const Face = styled.div`
   height: 100%;
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  &:hover {
+    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+  }
 `;
 
 const Front = Face.extend`
@@ -88,22 +90,18 @@ const BlockText = styled.div`
 class Card extends React.Component<Props, State> {
 
   state = {
-    hovered: false,
     pinned: false,
     color: colors[this.props.content.key % colors.length],
   };
 
   render() {
-    const { hovered, pinned } = this.state;
+    const { pinned } = this.state;
     const { title, description } = this.props.content;
-    const flip = hovered || pinned;
     return (
       <View 
-        onMouseEnter={() => this.setState({ hovered: true })}
-        onMouseLeave={() => this.setState({ hovered: false })} 
         onClick={() => this.setState({ pinned: !pinned })} 
       >
-       <Flipper flip={flip}>
+       <Flipper flip={pinned}>
          <Back style={{background: this.state.color}}>
            <BlockText>
              {description}
