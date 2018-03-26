@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import {Link} from 'react-router-dom';
+import styled, {keyframes} from 'styled-components';
 const arrow = require('./arrow.png');
 
 const Open = keyframes`
@@ -28,9 +28,9 @@ interface MenuProps {
 const Menu = styled.div`
   background: #262626;
   overflow: hidden;
-  animation-name: ${(props: MenuProps) => props.open ? Open : Close};
+  animation-name: ${(props: MenuProps) => (props.open ? Open : Close)};
   animation-duration: 1s;
-  max-height: ${(props: MenuProps) => props.open ? '300px' : 0};
+  max-height: ${(props: MenuProps) => (props.open ? '300px' : 0)};
   display: flex;
   flex-direction: column;
 `;
@@ -42,7 +42,7 @@ const MenuItem = styled(Link)`
   text-decoration: none;
   &: hover {
     color: black;
-    background: #e6e6e6; 
+    background: #e6e6e6;
     cursor: pointer;
   }
 `;
@@ -81,15 +81,13 @@ const PointUp = keyframes`
 `;
 
 const Image = styled.img`
-  transform: rotateX(${(props: MenuProps) => props.open ? '180deg' : '0deg'});
-  animation-name: ${(props: MenuProps) => props.open ? PointDown : PointUp};
+  transform: rotateX(${(props: MenuProps) => (props.open ? '180deg' : '0deg')});
+  animation-name: ${(props: MenuProps) => (props.open ? PointDown : PointUp)};
   animation-duration: 1s;
   width: 80%;
 `;
 
-interface Props {
-
-}
+interface Props {}
 
 interface State {
   open: boolean;
@@ -97,10 +95,9 @@ interface State {
 }
 
 class Header extends React.Component<Props, State> {
-
   constructor(props: Props) {
     super(props);
-    this.state = { hasBeenOpened: false, open: false };
+    this.state = {hasBeenOpened: false, open: false};
   }
 
   render() {
@@ -109,28 +106,19 @@ class Header extends React.Component<Props, State> {
       return (
         <Icon
           key={1}
-          onClick={() => 
-            this.setState({ hasBeenOpened: true, open: !open})}
-        >
-          <Image open={open} src={arrow}/>
+          onClick={() => this.setState({hasBeenOpened: true, open: !open})}>
+          <Image open={open} src={arrow} />
         </Icon>
       );
     }
     return [
-      (
-        <Menu open={open} key={0} >
-          <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="/details">Details</MenuItem>
-        </Menu>
-      ),
-      (
-        <Icon
-          key={1}
-          onClick={() => this.setState({ open: !open})}
-        >
-          <Image open={open} src={arrow}/>
-        </Icon>
-      ),
+      <Menu open={open} key={0}>
+        <MenuItem to="/">Home</MenuItem>
+        <MenuItem to="/details">Details</MenuItem>
+      </Menu>,
+      <Icon key={1} onClick={() => this.setState({open: !open})}>
+        <Image open={open} src={arrow} />
+      </Icon>,
     ];
   }
 }

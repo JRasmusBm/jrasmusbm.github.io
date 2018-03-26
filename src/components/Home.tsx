@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 const rasmus = require('./rasmus.jpg');
 import Header from './Header';
@@ -51,7 +51,7 @@ class Home extends React.Component {
   render() {
     return (
       <View>
-        <Header key={0}/>
+        <Header key={0} />
         <Content key={1}>
           <Image src={rasmus} />
           <TextHeader>Hi, I'm Rasmus!</TextHeader>

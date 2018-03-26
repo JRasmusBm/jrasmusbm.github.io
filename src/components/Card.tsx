@@ -29,7 +29,6 @@ const View = styled.div`
   &:hover {
     cursor: pointer;
   }
-  
 `;
 
 const Flipper = styled.div`
@@ -37,8 +36,7 @@ const Flipper = styled.div`
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  ${(props: FlipProps) => 
-    props.flip ? 'transform: rotateY(180deg);' : ''}
+  ${(props: FlipProps) => (props.flip ? 'transform: rotateY(180deg);' : '')};
 `;
 
 interface Content {
@@ -65,9 +63,9 @@ const Face = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   &:hover {
-    box-shadow: 0 5px 10px 0 rgba(0,0,0,0.4);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.4);
   }
 `;
 
@@ -88,25 +86,20 @@ const BlockText = styled.div`
 `;
 
 class Card extends React.Component<Props, State> {
-
   state = {
     pinned: false,
     color: colors[this.props.content.key % colors.length],
   };
 
   render() {
-    const { pinned } = this.state;
-    const { title, description } = this.props.content;
+    const {pinned} = this.state;
+    const {title, description} = this.props.content;
     return (
-      <View 
-        onClick={() => this.setState({ pinned: !pinned })} 
-      >
-       <Flipper flip={pinned}>
-         <Back style={{background: this.state.color}}>
-           <BlockText>
-             {description}
-           </BlockText>
-         </Back>
+      <View onClick={() => this.setState({pinned: !pinned})}>
+        <Flipper flip={pinned}>
+          <Back style={{background: this.state.color}}>
+            <BlockText>{description}</BlockText>
+          </Back>
           <Front style={{background: this.state.color}}>{title}</Front>
         </Flipper>
       </View>
