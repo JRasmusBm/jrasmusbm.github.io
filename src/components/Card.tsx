@@ -1,27 +1,27 @@
-import * as React from 'react';
-import styled from 'styled-components';
+import * as React from "react";
+import styled from "styled-components";
 
 interface FlipProps {
   flip: boolean;
 }
 
 const colors = [
-  '#0074D9',
-  '#0be881',
-  '#ef5777',
-  '#ffa801',
-  '#3D9970',
-  '#39CCCC',
-  '#FFDC00',
-  '#85144b',
-  '#7FDBFF',
-  '#F012BE',
-  '#01FF70',
-  '#ff5e57',
-  '#FF851B',
-  '#2ECC40',
-  '#FF4136',
-  '#B10DC9',
+  "#0074D9",
+  "#0be881",
+  "#ef5777",
+  "#ffa801",
+  "#3D9970",
+  "#39CCCC",
+  "#FFDC00",
+  "#85144b",
+  "#7FDBFF",
+  "#F012BE",
+  "#01FF70",
+  "#ff5e57",
+  "#FF851B",
+  "#2ECC40",
+  "#FF4136",
+  "#B10DC9",
 ];
 
 const View = styled.div`
@@ -36,7 +36,7 @@ const Flipper = styled.div`
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  ${(props: FlipProps) => (props.flip ? 'transform: rotateY(180deg);' : '')};
+  ${(props: FlipProps) => (props.flip ? "transform: rotateY(180deg);" : "")};
 `;
 
 interface Content {
@@ -92,15 +92,15 @@ class Card extends React.Component<Props, State> {
   };
 
   render() {
-    const {pinned} = this.state;
-    const {title, description} = this.props.content;
+    const { pinned } = this.state;
+    const { title, description } = this.props.content;
     return (
-      <View onClick={() => this.setState({pinned: !pinned})}>
+      <View onClick={() => this.setState({ pinned: !pinned })}>
         <Flipper flip={pinned}>
-          <Back style={{background: this.state.color}}>
+          <Back style={{ background: this.state.color }}>
             <BlockText>{description}</BlockText>
           </Back>
-          <Front style={{background: this.state.color}}>{title}</Front>
+          <Front style={{ background: this.state.color }}>{title}</Front>
         </Flipper>
       </View>
     );

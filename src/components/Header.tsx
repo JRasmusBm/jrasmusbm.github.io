@@ -1,7 +1,7 @@
-import * as React from 'react';
-import {Link} from 'react-router-dom';
-import styled, {keyframes} from 'styled-components';
-const arrow = require('./arrow.png');
+import * as React from "react";
+import { Link } from "react-router-dom";
+import styled, { keyframes } from "styled-components";
+const arrow = require("./arrow.png");
 
 const Open = keyframes`
   0% { 
@@ -30,7 +30,7 @@ const Menu = styled.div`
   overflow: hidden;
   animation-name: ${(props: MenuProps) => (props.open ? Open : Close)};
   animation-duration: 1s;
-  max-height: ${(props: MenuProps) => (props.open ? '300px' : 0)};
+  max-height: ${(props: MenuProps) => (props.open ? "300px" : 0)};
   display: flex;
   flex-direction: column;
 `;
@@ -81,7 +81,7 @@ const PointUp = keyframes`
 `;
 
 const Image = styled.img`
-  transform: rotateX(${(props: MenuProps) => (props.open ? '180deg' : '0deg')});
+  transform: rotateX(${(props: MenuProps) => (props.open ? "180deg" : "0deg")});
   animation-name: ${(props: MenuProps) => (props.open ? PointDown : PointUp)};
   animation-duration: 1s;
   width: 80%;
@@ -97,16 +97,17 @@ interface State {
 class Header extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props);
-    this.state = {hasBeenOpened: false, open: false};
+    this.state = { hasBeenOpened: false, open: false };
   }
 
   render() {
-    const {hasBeenOpened, open} = this.state;
+    const { hasBeenOpened, open } = this.state;
     if (!hasBeenOpened) {
       return (
         <Icon
           key={1}
-          onClick={() => this.setState({hasBeenOpened: true, open: !open})}>
+          onClick={() => this.setState({ hasBeenOpened: true, open: !open })}
+        >
           <Image open={open} src={arrow} />
         </Icon>
       );
@@ -116,7 +117,7 @@ class Header extends React.Component<Props, State> {
         <MenuItem to="/">Home</MenuItem>
         <MenuItem to="/details">Details</MenuItem>
       </Menu>,
-      <Icon key={1} onClick={() => this.setState({open: !open})}>
+      <Icon key={1} onClick={() => this.setState({ open: !open })}>
         <Image open={open} src={arrow} />
       </Icon>,
     ];

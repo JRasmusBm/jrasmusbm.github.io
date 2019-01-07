@@ -1,9 +1,9 @@
-import * as React from 'react';
-import styled from 'styled-components';
+import * as React from "react";
+import styled from "styled-components";
 
-import {cards} from '../content/cards';
-import Header from './Header';
-import Card from './Card';
+import { cards } from "../content/cards";
+import Header from "./Header";
+import Card from "./Card";
 
 interface Content {
   key: number;
