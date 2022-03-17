@@ -1,7 +1,8 @@
 ---
-title: "My First Post"
-date: 2022-03-17T12:48
-draft: true
+title: "The ChefWaiter Revolution"
+date: 2022-03-17
+publishdate: 2022-03-17
+draft: false
 ---
 
 # The ChefWaiter Revolution

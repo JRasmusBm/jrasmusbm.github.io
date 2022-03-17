@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <main>
+      <article>
+        <h2>{{ .Title }}</h2>
+        {{ .Content }}
+      </article>
+    </main>
+    <sidebar
+      ><nav>
+        <ul>
+          {{ range .Pages }}
+          <li>
+            <a href="{{.Permalink}}">
+              {{.Date.Format "2006-01-02"}} | {{.Title}}
+            </a>
+          </li>
+          {{ end }}
+        </ul>
+      </nav>
+    </sidebar>
+  </body>
+</html>
