@@ -5,24 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <main>
-      <article>
-        <h2>{{ .Title }}</h2>
-        {{ .Content }}
-      </article>
-    </main>
-    <sidebar
-      ><nav>
-        <ul>
-          {{ range .Pages }}
-          <li>
-            <a href="{{.Permalink}}">
-              {{.Date.Format "2006-01-02"}} | {{.Title}}
-            </a>
-          </li>
-          {{ end }}
-        </ul>
-      </nav>
-    </sidebar>
+    {{ with .Site.GetPage "/blog/chef-waiter" }}
+    {{ partial "post" . }}
+    {{else}}Not found...{{ end }}
+    {{ partial "post-list" . }}
   </body>
 </html>
